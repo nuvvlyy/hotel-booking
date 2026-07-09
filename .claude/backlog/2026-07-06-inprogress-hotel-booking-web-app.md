@@ -9,15 +9,15 @@ As a hotel guest, I want to search for available rooms, book a room, view my boo
 There is currently no self-service web interface for guests. All booking operations require manual coordination. A web app will let guests independently discover rooms, complete bookings, and handle changes — reducing front-desk load and improving guest experience.
 
 ## Tasks (implementation checklist)
-- [ ] Scaffold the project (framework choice: Next.js or React + Node/Express backend, PostgreSQL or SQLite DB)
-- [ ] Design the data model: Rooms, Bookings, Users/Guests
-- [ ] Implement authentication (sign-up / login / session)
-- [ ] Build room search page: filter by date range, room type, occupancy, price
-- [ ] Build room detail page with availability indicator
-- [ ] Build booking flow: select dates → confirm → payment stub → confirmation screen
-- [ ] Build booking history page (list of past and upcoming bookings)
-- [ ] Build booking management page: view details, cancel or modify a booking
-- [ ] Add basic admin panel: manage rooms, view all bookings (stretch)
+- [x] Scaffold the project (Next.js App Router, TypeScript, Tailwind, SQLite + Prisma 7, NextAuth.js v5)
+- [x] Design the data model: Rooms, Bookings, Users/Guests
+- [x] Implement authentication (sign-up / login / session)
+- [x] Build room search page: filter by date range, room type, occupancy, price
+- [x] Build room detail page with availability indicator
+- [x] Build booking flow: select dates → confirm → payment stub → confirmation screen
+- [x] Build booking history page (list of past and upcoming bookings)
+- [x] Build booking management page: view details, cancel or modify a booking
+- [x] Add basic admin panel: manage rooms, view all bookings (stretch)
 - [ ] Write integration tests for booking creation and cancellation
 - [ ] Deploy to a hosting platform (Vercel, Railway, or similar)
 
@@ -41,3 +41,6 @@ There is currently no self-service web interface for guests. All booking operati
 ## History
 - 2026-07-06 11:30 (Asia/Bangkok) — created, status: draft
 - 2026-07-06 11:46 (Asia/Bangkok) — implementation started, status: in-progress
+- 2026-07-06 14:03 (Asia/Bangkok) — all core tasks complete (Tasks 1-9), dev server verified, status: in-progress
+  - Files: prisma/schema.prisma, prisma/seed.ts, .env, package.json, src/lib/db.ts, src/lib/auth.ts, src/app/layout.tsx, src/app/page.tsx, src/app/login/page.tsx, src/app/register/page.tsx, src/app/rooms/[id]/page.tsx, src/app/bookings/page.tsx, src/app/bookings/[id]/page.tsx, src/app/admin/page.tsx, src/app/api/auth/[...nextauth]/route.ts, src/app/api/auth/register/route.ts, src/app/api/rooms/route.ts, src/app/api/rooms/[id]/route.ts, src/app/api/bookings/route.ts, src/app/api/bookings/[id]/route.ts, src/app/api/admin/bookings/route.ts, src/components/Navbar.tsx, src/components/SessionProvider.tsx
+  - Notes: Prisma 7 requires @prisma/adapter-libsql (no plain URL datasource); DATABASE_URL=file:dev.db resolves to project root. DB seeded with 6 rooms + admin@hotel.com / guest@hotel.com. Tasks 10 (tests) and 11 (deploy) left as follow-up.
