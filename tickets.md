@@ -18,11 +18,11 @@ end-to-end before anything reads or displays the review elsewhere.
 
 **Blocked by:** None — can start immediately.
 
-- [ ] `Review` model added to the schema (one review per booking, enforced at the DB level via a unique constraint on the booking reference)
-- [ ] Shared eligibility/validation logic exists in one place: a booking is reviewable only when its status is confirmed and its check-out date is in the past; rating must be an integer 1-5; comment must be ≤1000 characters
-- [ ] An endpoint lets the owning guest create a review for their own eligible, not-yet-reviewed booking; returns clear errors for: not signed in, not the owner, booking not eligible yet, booking already reviewed, invalid rating/comment
-- [ ] A shared star-rating UI component exists and supports a click-to-select input mode
-- [ ] The booking detail page shows a "Leave a review" star input + comment box when the booking is eligible and unreviewed, and shows the submitted review (read-only) immediately after submitting
+- [x] `Review` model added to the schema (one review per booking, enforced at the DB level via a unique constraint on the booking reference)
+- [x] Shared eligibility/validation logic exists in one place: a booking is reviewable only when its status is confirmed and its check-out date is in the past; rating must be an integer 1-5; comment must be ≤1000 characters
+- [x] An endpoint lets the owning guest create a review for their own eligible, not-yet-reviewed booking; returns clear errors for: not signed in, not the owner, booking not eligible yet, booking already reviewed, invalid rating/comment
+- [x] A shared star-rating UI component exists and supports a click-to-select input mode
+- [x] The booking detail page shows a "Leave a review" star input + comment box when the booking is eligible and unreviewed, and shows the submitted review (read-only) immediately after submitting
 
 ## Room and search pages show ratings
 
